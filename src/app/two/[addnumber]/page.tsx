@@ -1,0 +1,56 @@
+import React from 'react'
+import styles from "../page.module.css";
+import Link from "next/link";
+import notFound from '../../not-found';
+
+type Props   = {
+  params: {
+    id: string;
+  };
+};
+
+export default async function Page({ params }: {
+  params: Promise<{addnumber:string}>
+}) {
+  const id = await params
+  const currentId = parseInt(id.addnumber, 10);
+
+   console.log("saiaii" , id)
+
+  if (isNaN(currentId) || currentId < 1 || currentId > 100) {
+    // return notFound();
+    return <>
+    <h1> iss is currentid
+      </h1></>;
+
+  }
+
+  const nextId1 = currentId + 1;
+  const nextId2 = currentId + 2;
+
+  const isLastScreen = currentId >= 99;
+  return (
+    <main className="p-6">
+    <h1 className="text-3xl font-bold mb-4">Screen {currentId}</h1>
+
+    {!isLastScreen ? (
+      <div className="flex flex-col gap-2">
+        {nextId1 <= 100 && (
+          <Link href={`/two/${nextId1+1}`} className="text-blue-600 underline">
+            Go to Screen {nextId1}saii
+          </Link>
+        )}
+        {nextId2 <= 100 && (
+          <Link href={`/two/${nextId2+2}`} className="text-blue-600 underline">
+            Go to Screen {nextId2}
+          </Link>
+        )}
+      </div>
+    ) : (
+      <Link href="/" className="text-green-600 underline">
+        Go to Home
+      </Link>
+    )}
+  </main>
+  )
+}

@@ -27,6 +27,14 @@
   }
 }
 
+.secounddiv {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border: 1px red  solid;
+  justify-content: space-around;
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -130,6 +138,11 @@ a.secondary {
   .page {
     padding: 32px;
     padding-bottom: 80px;
+  }
+
+  .secounddiv {
+    flex-direction: row;
+    border: 1px red  solid;
   }
 
   .main {
