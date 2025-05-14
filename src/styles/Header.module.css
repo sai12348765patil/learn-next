@@ -1,0 +1,17 @@
+/* styles/Header.module.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #1e1e2f;
+    color: white;
+  }
+  .header nav a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+  }
+  .header nav a:hover {
+    text-decoration: underline;
+  }
+  

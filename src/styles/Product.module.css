@@ -1,0 +1,17 @@
+/* styles/Product.module.css */
+.product {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  .product img {
+    width: 300px;
+    height: auto;
+    border: 1px solid #ccc;
+  }
+  .product div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  

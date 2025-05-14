@@ -1,7 +1,7 @@
 import React from 'react'
-import styles from "../page.module.css";
-import Link from "next/link";
 import notFound from '../../not-found';
+import styles from "../../page.module.css";
+import Link from "next/link";
 
 type Props   = {
   params: {
@@ -30,19 +30,19 @@ export default async function Page({ params }: {
 
   const isLastScreen = currentId >= 99;
   return (
-    <main className="p-6">
-    <h1 className="text-3xl font-bold mb-4">Screen {currentId}</h1>
+    <div className={styles.page}>
+    <h1 className="text-3xl font-bold mb-4">Screen {nextId1}</h1>
 
     {!isLastScreen ? (
-      <div className="flex flex-col gap-2">
+      <div className={styles.secounddiv}>
         {nextId1 <= 100 && (
           <Link href={`/two/${nextId1+1}`} className="text-blue-600 underline">
-            Go to Screen {nextId1}saii
+            Go to Screen {nextId1+1}saii
           </Link>
         )}
         {nextId2 <= 100 && (
-          <Link href={`/two/${nextId2+2}`} className="text-blue-600 underline">
-            Go to Screen {nextId2}
+          <Link href={`/two/${nextId2+1}`} className="text-blue-600 underline">
+            Go to Screen {nextId2+1}
           </Link>
         )}
       </div>
@@ -51,6 +51,6 @@ export default async function Page({ params }: {
         Go to Home
       </Link>
     )}
-  </main>
+  </div>
   )
 }
